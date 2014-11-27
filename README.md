@@ -24,6 +24,27 @@ To get these pieces of information:
 8. Put _authKey_ and _city_ into the mypowerstats scripts in place of the bogus values
 
 
+##What you'll get
+
+The response from the myeskom site is a JSON Object.
+
+In the object you'll find some useful things, and some useless things
+
+Useful:
+- 'status' = Power Alert Status (Eskom's colour index of grid status)
+- 'level' = Power Level (Eskom's way of stating the grid load)
+- 'levelstatus' = Power Trend (Trend of the load. Up/Down/Stable)
+
+Sort of useful:
+- 'location' = Location (incase you forgot)
+- 'tmp' = Outside Temperature (Celcius)
+- 'appliances' = An Array of Appliances that Eskom thinks you should turn off
+  - 'name' = Name of the appliance you should turn off
+
+Useless:
+- 'nextloadsheddingdate' = Next Load Shedding Date (I've never seen this populated. It's always null)
+- 'tiptitle' and 'tipofday' = Eskom gives you helpful Tips on saving electricity. Like using a blanket instead of a heater.
+
 ##Credits
 
 Written and maintained by Kieran Murphy <daffy@daffy.za.net>
