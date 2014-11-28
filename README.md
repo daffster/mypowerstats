@@ -1,6 +1,7 @@
 mypowerstats
 ============
 Retrieve information from the Eskom API
+
 ##What's going on here?
 This code makes a query to the myeskom.co.za website and pulls out the publically available information.
 Nothing funny is going on here, its just a different way to display the information that Eskom has made available
@@ -52,4 +53,6 @@ Written and maintained by Kieran Murphy <daffy@daffy.za.net>
 If you find this helpful in any way and you want to say thanks, feel free to donate Bitcoin at **1Eyr72dHQs3RCo1tpXDeccyxjzqyXdYvuH**
 
 Thanks!
+
+
 
