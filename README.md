@@ -46,6 +46,11 @@ Useless:
 - 'nextloadsheddingdate' = Next Load Shedding Date (I've never seen this populated. It's always null)
 - 'tiptitle' and 'tipofday' = Eskom gives you helpful Tips on saving electricity. Like using a blanket instead of a heater.
 
+
+##License
+
+This code is released under The MIT License (MIT).
+
 ##Credits
 
 Written and maintained by Kieran Murphy <daffy@daffy.za.net>
