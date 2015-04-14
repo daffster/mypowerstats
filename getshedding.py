@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 
+# This script is provided with no documentation other than the comments contained within.
+# I might change this, but due to demand I'm releasing without documentation for now.
+
 from httplib2 import Http
 from urllib import urlencode
 import time
 from datetime import datetime
+from pytz import timezone
 import json
 
 def GetLoadsheddingStage():
@@ -74,9 +78,9 @@ def TidyCityPowerEvents(events):
     if events['status'] == 'Success':
         for event in events['events']:
             tidy={}
-            tidy['StartDate'] = datetime.fromtimestamp(int(event['StartDate'][6:-2])/1000)
+            tidy['StartDate'] = datetime.fromtimestamp(int(event['StartDate'][6:-2])/1000, timezone('Africa/Johannesburg'))
             tidy['StartTimestamp'] = int(event['StartDate'][6:-2])/1000
-            tidy['EndDate'] = datetime.fromtimestamp(int(event['EndDate'][6:-2])/1000)
+            tidy['EndDate'] = datetime.fromtimestamp(int(event['EndDate'][6:-2])/1000, timezone('Africa/Johannesburg'))
             tidy['EndTimestamp'] = int(event['EndDate'][6:-2])/1000
             tidy['Title'] = event['Title']
             tidy['SubBlock'] = event['SubBlock']
@@ -88,6 +92,6 @@ def TidyCityPowerEvents(events):
 
 
 # You need to find your Suburb from the citypower website.
-suburb=244
+suburb='244-4B'
 print "Load Shedding Stage:    %s" % (GetLoadsheddingStage()['stage'],)
 print GetNextLoadsheddingEvent(1,suburb,GetLoadsheddingStage()['stage'])
